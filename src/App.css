@@ -1,0 +1,166 @@
+.root {
+  display: grid;
+  grid-template-columns: 33% 33% 1fr;
+  justify-items: center;
+}
+
+.outer {
+  display: grid;
+  align-content: center;
+}
+
+.wrapper {
+  height: 24vh;
+  width: 48vh;
+  margin-block-start: 8vh;
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.ticket-bkgd {
+  display: grid;
+  grid-template-columns: 80% 1fr;
+  height: 24vh;
+  width: 48vh;
+  border-radius: 1.6vh;
+  transform-origin: left;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.wrapper:hover > .ticket-bkgd {
+  transform: scaleX(0.6);
+}
+
+.wrapper:hover > .date-graphic {
+  transform: translateX(-60%);
+  opacity: 0;
+}
+
+.wrapper:hover > .graphic {
+  transform: translateX(-48%);
+}
+
+.graphic {
+  position: absolute;
+  height: 20vh;
+  margin-top: 1.6vh;
+  margin-left: 13.5vh;
+  z-index: 3;
+  transition: all 0.24s ease;
+}
+
+.date-graphic {
+  grid-column: 2;
+  width: 6vh;
+  height: 8vh;
+  text-align: center;
+  padding: 0 1vh;
+  background-color: #fafafa;
+  border-radius: 1vh;
+  transition: 0.14s ease-in;
+  justify-self: flex-end;
+  margin-top: 1.2vh;
+  margin-right: 1.2vh;
+  z-index: 3;
+}
+
+.month, .day {
+  font-size: 2vh;
+  line-height: 0.8;
+  margin: 0.6vh 0;
+}
+
+.month {
+  margin-bottom: 0px;
+}
+
+.day {
+  margin-top: 1vh;
+  font-size: 2.6vh;
+}
+
+hr {
+  margin: 0.6vh;
+}
+
+.info {
+  position: absolute;
+  margin-left: 30vh;
+  margin-top: 0.6vh;
+  width: 16vh;
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5vh;
+  text-align: center;
+  line-height: 1;
+}
+
+.info p {
+  padding: 0;
+  margin: 0.6vh;
+}
+
+#full-date {
+  font-size: 1.8vh;
+  font-weight: 900;
+  margin-bottom: 1.2vh;
+}
+
+.btn {
+  position: absolute;
+  width: 11vh;
+  margin-left: 33vh;
+  margin-top: 16vh;
+  border-radius: 1vh;
+  border-color: #353535;
+  outline: #00000000;
+}
+
+.btn:hover {
+  border-color: #0a0a0a;
+}
+
+.btn:active {
+  background-color: #dadada;
+  color: #000000;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+}
+
+.start-from {
+  grid-column: 1;
+  display: inline-block;
+  width: 5vh;
+  text-align: left;
+  font-size: 1.2vh;
+}
+
+.cost {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.8vh;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  font-weight: 700;
+  src: local('Comfortaa'), url(./Comfortaa-VariableFont_wght.ttf) format('opentype');
+}
+
+@media only screen and (max-width: 600px) {
+  .root {
+    display: flex;
+    flex-grow: unset;
+    flex-direction: column;
+  }
+  .start-from {
+    font-size: 1vh;
+  }
+}
